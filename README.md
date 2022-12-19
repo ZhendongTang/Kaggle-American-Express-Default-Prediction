@@ -69,22 +69,22 @@ M = 0.5（G+D)
 ## 模型融合
 (✔)加权融合 
 `xgb0['prediction']*0.2 + lgb1['prediction']*0.4 +lgb2['prediction']*0.4`
-排序融合
+> 排序融合
 加权排序融合
 stacking
 
 ## 亮点
-特征工程（重要）
-模型集成
+- 特征工程（重要）
+- 模型集成
 
 ## 不足
-特征不够精细
-融合策略比较粗糙
-NN探索不够
+- 特征不够精细
+- 融合策略比较粗糙
+- NN探索不够
 
 ## 总结
-第三名只用树模型，特征工程做了5000+特征,多看社区讨论，学习别人的特征工程
-探索NN
+- 第三名只用树模型，特征工程做了5000+特征，看社区讨论，学习别人的特征工程
+- 探索NN
 
 ```angular2html
 优秀方案推荐
@@ -94,24 +94,23 @@ https://www.kaggle.com/code/kalelpark/amex-top10-solution
 ```
 
 # 运行步骤
-1 下载原始数据集保存到input/amex-default-prediction目录；
-下载处理后的数据集到input/amex-data-integer-dtypes-parquet-format目录
-主办方加了均匀分布的噪声，这个数据集去除了这些噪声，效果更好。
-（https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format）
-2 运行code/fe_process.py，该步骤主要目的是生成特征文件，运行需要一定时间
-3 运行code/lgb.py，这个代码训练lgb
-4 运行code/xgb.py，这个代码训练xgb(使用GPU)
-5 运行code/lgb_2.ipynb，这个代码训练第二个lgb
-6 运行code/infer.ipynb，得到融合结果
-7 提交sub/submission.csv文件到kaggle
+- 下载原始数据集保存到input/amex-default-prediction目录；
+  -下载处理后的数据集到input/amex-data-integer-dtypes-parquet-format目录
+  -主办方加了均匀分布的噪声，这个数据集去除了这些噪声，效果更好。（https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format）
+- 运行code/fe_process.py，该步骤主要目的是生成特征文件，运行需要一定时间
+- 运行code/lgb.py，这个代码训练lgb
+- 运行code/xgb.py，这个代码训练xgb(使用GPU)
+- 运行code/lgb_2.ipynb，这个代码训练第二个lgb
+- 运行code/infer.ipynb，得到融合结果
+- 提交sub/submission.csv文件到kaggle
 
 # 依赖的包
-pandas
-numpy
-lightgbm
-pyarrow
-pickle
-tdqm
+- pandas
+- numpy
+- lightgbm
+- pyarrow
+- pickle
+- tdqm
 
 # Tips 
 运行需要内存较大，建议64G内存
