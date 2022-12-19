@@ -17,7 +17,7 @@
 - 存在主办方均匀插入的噪声
 - 该数据集包含每个客户在每个报表日期的汇总配置文件特征
 - 特征通过了匿名和归一化处理，特征可以分为以下类别：
-![img.png](./img.png)
+![img.png](https://github.com/ZhendongTang/Kaggle-American-Express-Default-Prediction/edit/main/img.png)
 
 ### Tips
 - csv占存储空间，对数据进行压缩降低精度
@@ -34,7 +34,7 @@ M = 0.5（G+D)
 为什么是0.5？ 
 由主办方提供，可能是根据具体业务场景所得经验
 
-![img_1.png](./img_1.png)
+![img_1.png](https://github.com/ZhendongTang/Kaggle-American-Express-Default-Prediction/edit/main/img_1.png)
 
 ## 模型选择
 对于银行来说，可解释性要求高。故很少用深度的模型
@@ -69,9 +69,11 @@ M = 0.5（G+D)
 ## 模型融合
 (✔)加权融合 
 `xgb0['prediction']*0.2 + lgb1['prediction']*0.4 +lgb2['prediction']*0.4`
-> 排序融合
-加权排序融合
+> 排序融合 <br>  
+加权排序融合 <br>  
 stacking
+
+
 
 ## 亮点
 - 特征工程（重要）
@@ -94,9 +96,9 @@ https://www.kaggle.com/code/kalelpark/amex-top10-solution
 ```
 
 # 运行步骤
-- 下载原始数据集保存到input/amex-default-prediction目录；
-  -下载处理后的数据集到input/amex-data-integer-dtypes-parquet-format目录
-  -主办方加了均匀分布的噪声，这个数据集去除了这些噪声，效果更好。（https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format）
+- 下载原始数据集保存到input/amex-default-prediction目录；<br>  
+  下载处理后的数据集到input/amex-data-integer-dtypes-parquet-format目录 <br>  
+  主办方加了均匀分布的噪声，这个数据集去除了这些噪声，效果更好。（https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format）
 - 运行code/fe_process.py，该步骤主要目的是生成特征文件，运行需要一定时间
 - 运行code/lgb.py，这个代码训练lgb
 - 运行code/xgb.py，这个代码训练xgb(使用GPU)
