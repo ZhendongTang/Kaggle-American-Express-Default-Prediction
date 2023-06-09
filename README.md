@@ -17,7 +17,7 @@
 - 存在主办方均匀插入的噪声
 - 该数据集包含每个客户在每个报表日期的汇总配置文件特征
 - 特征通过了匿名和归一化处理，特征可以分为以下类别：
-![img.png](https://github.com/ZhendongTang/Kaggle-American-Express-Default-Prediction/edit/main/img.png)
+![](./img.png)
 
 ### Tips
 - csv占存储空间，对数据进行压缩降低精度
